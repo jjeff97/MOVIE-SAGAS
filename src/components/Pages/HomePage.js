@@ -1,11 +1,17 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux'
 import mapStoreToProps from '../../modules/mapStoreToProps';
-
+import MovieList from '../MovieList/MovieList'
 class HomePage extends Component {
     
 
-componentDidMount() {
+
+    render() {
+    return (
+        <div>
+            <MovieList/>        
+        </div>
+    )
 
 }
 

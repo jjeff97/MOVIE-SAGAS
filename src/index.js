@@ -22,9 +22,22 @@ function* getMovies(){
         console.log('ERROR IN GET', err)
     }
 }
+
+function* getGenres(){
+    try {
+        const response = yield axios.get('/api/genre');
+        yield put({type: 'SET_GENRES', payload: response.data});
+    }
+    catch(err) {
+        console.log('ERROR IN GET', err)
+    }
+}
+
+
 // Create the rootSaga generator function
 function* rootSaga() {
     yield takeEvery('GET_MOVIES', getMovies);
+    yield takeEvery('GET_GENRES', getGenres);
 }
 
 // Create sagaMiddleware
