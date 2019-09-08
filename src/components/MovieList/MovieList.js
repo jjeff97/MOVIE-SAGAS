@@ -14,9 +14,7 @@ class MovieList extends Component {
 
     render() {
 
-        console.log(this.props.reduxState.movies)
-        console.log(this.props.reduxState.genres)
-        
+       
         return (
             <div>
                 <Grid container spacing={3}>
