@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
-import HomePage from '../HomePage/HomePage';
+
+
+import { HashRouter as Router, Route } from 'react-router-dom';
+
+
+import HomePage from '../Pages/HomePage.js';
+import DetailsPage from '../Pages/DetailsPage.js';
+import EditPage from '../Pages/EditPage.js';
 import './App.css';
 
 class App extends Component {
@@ -7,8 +14,20 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <p HomePage></p>
+        <header className="App-header">
+        <h2>Movies</h2>
+        </header>
+        <br/>
+
+        <Router>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/details/:id" component={DetailsPage} />
+          <Route exact path="/edit" component={EditPage} />
+        </Router>
       </div>
+
+
+
     );
   }
 }
