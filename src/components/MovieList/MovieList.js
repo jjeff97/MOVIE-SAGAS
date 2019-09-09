@@ -19,7 +19,7 @@ class MovieList extends Component {
             <div>
                 <Grid container spacing={3}>
                     {this.props.reduxState.movieList.map((movie, index) => {
-                        {console.log('meow',movie.name)}
+                        {console.log(movie.name)}
                         return (
                             <Grid key={index} item>
                                 <MovieCard movie={movie}></MovieCard>
