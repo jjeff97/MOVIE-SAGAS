@@ -13,23 +13,19 @@ class App extends Component {
   // Renders the entire app on the DOM
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-        <h2>Movies</h2>
-        </header>
-        <br/>
+      <Router>
+        <div className="App">
 
-        <Router>
           <Route exact path="/" component={HomePage} />
-          <Route exact path="/details/:id" component={DetailsPage} />
-          <Route exact path="/edit" component={EditPage} />
-        </Router>
-      </div>
-
-
-
+          <Route path="/detail/:id" component={DetailsPage} />
+          <Route path="/edit/:id" component={EditPage} />
+        </div>
+      </Router>
     );
   }
 }
+
+
+
 
 export default App;
