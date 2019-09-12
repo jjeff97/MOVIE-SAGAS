@@ -16,7 +16,7 @@ import axios from 'axios';
 function* rootSaga() {
     yield takeEvery('GET_MOVIES', allMoviesSaga);
     yield takeEvery('GET_MOVIE', movieSaga);
-    yield takeEvery('PUT_MOVIES', movieUpdateSaga);
+    yield takeEvery('PUT_MOVIE', movieUpdateSaga);
 }
 
 //sagas 
@@ -39,6 +39,7 @@ function* movieSaga(action) {
                 genreName: movieItem.name,
             }
         });
+        
         yield put({
             type: 'SET_MOVIE',
             payload: {

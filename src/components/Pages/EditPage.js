@@ -30,7 +30,7 @@ class EditPage extends Component {
             description: '',
 
         });
-        this.props.history.push(`/detail/${this.props.store.movie.movies_is}`);
+        this.props.history.push(`/detail/${this.props.store.movie.movies_id}`);
 
     }
 

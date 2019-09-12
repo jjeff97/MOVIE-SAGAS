@@ -25,7 +25,7 @@ router.get('/single/:id', (req, res) => {
 
 
     const queryText = `SELECT * FROM "movies"
-                        JOIN "movies_genres" ON "movies.id ="movies_genres".movies_id
+                        JOIN "movies_genres" ON "movies".id ="movies_genres".movies_id
                         JOIN "genres" ON "movies_genres".genres_id = "genres".id
                         WHERE "movies".id = $1;`
     const movieId = req.params.id;
@@ -35,7 +35,7 @@ router.get('/single/:id', (req, res) => {
             res.send(response.rows);
         })
         .catch((err) => {
-            console.log('Error completing SELECT movie query', err);
+            console.log('Error completing GET (single): ', err);
             res.sendStatus(500);
         });
 });

@@ -6,7 +6,7 @@ import  { withRouter } from 'react-router-dom';
 class DetailsPage extends Component {
     componentDidMount() {
         this.props.dispatch({
-            type: 'GET_MOVIES',
+            type: 'GET_MOVIE',
             payload: this.props.match.params.id
         });
     }
@@ -29,7 +29,7 @@ class DetailsPage extends Component {
             <div>
                 <h1>DETAILS</h1>
                 <h2>{movie.title}</h2>
-                <img scr={movie.poster} alt="movie poster" />
+                <img src={movie.poster} alt="movie poster" />
                 <p>{movie.description}</p>
                 <h3>Genres: </h3>
                 <ul>
@@ -37,7 +37,7 @@ class DetailsPage extends Component {
                 </ul>
                 <button onClick={this.clickEdit}>Edit Info</button>
             </div>
-        )
+        );
     }
 
 
