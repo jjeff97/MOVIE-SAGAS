@@ -32,7 +32,7 @@ router.get('/single/:id', (req, res) => {
 
     pool.query(queryText, [movieId])
         .then((response) => {
-            res.send(response.ros);
+            res.send(response.rows);
         })
         .catch((err) => {
             console.log('Error completing SELECT movie query', err);
