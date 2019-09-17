@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 
 class MovieItem extends Component {
     clickToDetails = (event) =>{
-        this.props.history.push(`detail/${this.props.item.id};`)
+        this.props.history.push(`detail/${this.props.item.id}`)
     }
     render() {
         return(
